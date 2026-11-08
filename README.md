@@ -35,8 +35,6 @@ leader would ask:
 
 Author: Venkata Swetha Siddi. Actual resume: 4+ years in ML and analytics, enterprise networking, and cloud automation, now focused on AI/ML engineering and applied AI. Certified by Anthropic in Claude and the AI Fluency Framework (Claude 101 and AI Fluency Framework & Foundations, June 2026). Skills on that resume include ML evaluation, EDA, feature engineering, model benchmarking with scikit-learn, SQL, Python, FastAPI, GitHub Actions, Docker, and Kubernetes. Experience on that resume includes Data Scientist, Cognizant, Dec 2019–Apr 2022, with end-to-end ML, scikit-learn, evaluation, dashboards, and stakeholder narratives; and Network Engineer, Relic Solutions, Elmont, NY, Oct 2025–Feb 2026.
 
-How this project complements, and does not repeat, her existing projects: her existing work under github.com/networkwithswetha-alt includes a Sentiment Analysis API (TF-IDF + logistic regression, FastAPI, Docker, 92.5% held-out accuracy, 37/40, macro F1 0.925) and an LLM Fine-Tuning project with a programmatic eval harness. This dashboard is not another classifier or API, and it does not fine-tune a model. It is the telemetry and observability layer such AI tools need in production: per-run tracing, cost, usage, engagement, and ROI reporting in SQL and a leadership dashboard, with an eval suite that re-checks every figure. It builds on her existing ML evaluation, benchmarking, and dashboard experience, applied to AI usage in Finance instead of to a single model.
-
 ## Role skill mapping
 
 This project is built as a Finance AI Engineer portfolio project. It demonstrates:
