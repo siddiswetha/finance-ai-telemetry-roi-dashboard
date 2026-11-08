@@ -1,0 +1,13 @@
+test_id,case_description,expected_outcome,rubric,pass_bar,result
+E01,Row count: how many log rows load from data/usage-logs.csv,24,Count rows in usage_logs after loading the CSV; must equal the number of data rows in the file (24).,Exact match,PASS
+E02,Total AI cost: sum of cost_usd across all runs,3.8946,SUM(cost_usd) rounded to 4 decimals; hand-checked against the CSV column total.,Exact match to 4 decimals,PASS
+E03,Total prompt tokens: sum of prompt_tokens,35150,SUM(prompt_tokens); hand-checked against the CSV column total.,Exact match,PASS
+E04,Total completion tokens: sum of completion_tokens,13090,SUM(completion_tokens); hand-checked against the CSV column total.,Exact match,PASS
+E05,Average cost per run: total cost divided by 24 runs,0.1623,AVG(cost_usd) rounded to 4 decimals; must equal 3.8946 / 24 = 0.1623.,Exact match to 4 decimals,PASS
+E06,Helpful rate: share of runs users marked helpful,83.33,100 * helpful runs / total runs = 100 * 20 / 24 = 83.33% (2 decimals).,Exact match to 2 decimals,PASS
+E07,Reconciliation use case: run count and total cost,"6 runs, 0.7396 USD",COUNT(*) and SUM(cost_usd) filtered to use_case = 'reconciliation'.,Exact match on both figures,PASS
+E08,Forecasting use case: total cost,1.3726,SUM(cost_usd) filtered to use_case = 'forecasting'.,Exact match to 4 decimals,PASS
+E09,"Cost tracing check: every row cost_usd equals round((prompt_tokens + completion_tokens) * model rate, 4)",0 mismatches,"Recompute each row cost from its tokens and its model rate (standard 0.00005, large 0.00012 per token); count rows that do not match. Any mismatch means the log cannot be trusted.",Zero mismatches,PASS
+E10,"ROI ratio: (estimated savings - total cost) / total cost, where estimated savings = 20 helpful runs x $15.00",76.03,"(20 x 15.00 - 3.8946) / 3.8946 = 76.03 (2 decimals). The $15.00 per helpful run is the stated invented assumption, not a measured fact.",Exact match to 2 decimals,PASS
+E11,Distinct users: how many different user_ids appear,8,COUNT(DISTINCT user_id) across all rows.,Exact match,PASS
+E12,Slowest run: maximum latency and which run it was,3540 ms (R012),MAX(latency_ms) and the run_id that has it; a trace must point at one real run.,Exact match on both figures,PASS
