@@ -37,12 +37,11 @@ Author: Venkata Swetha Siddi. Actual resume: 4+ years in ML and analytics, enter
 
 How this project complements, and does not repeat, her existing projects: her existing work under github.com/networkwithswetha-alt includes a Sentiment Analysis API (TF-IDF + logistic regression, FastAPI, Docker, 92.5% held-out accuracy, 37/40, macro F1 0.925) and an LLM Fine-Tuning project with a programmatic eval harness. This dashboard is not another classifier or API, and it does not fine-tune a model. It is the telemetry and observability layer such AI tools need in production: per-run tracing, cost, usage, engagement, and ROI reporting in SQL and a leadership dashboard, with an eval suite that re-checks every figure. It builds on her existing ML evaluation, benchmarking, and dashboard experience, applied to AI usage in Finance instead of to a single model.
 
-## SoFi skill mapping
+## Role skill mapping
 
-This project is built for the **SoFi Associate AI Engineer, Finance
-Transformation** role. It demonstrates:
+This project is built as a Finance AI Engineer portfolio project. It demonstrates:
 
-| SoFi requirement | Where this project shows it |
+| AI Engineer requirement | Where this project shows it |
 |---|---|
 | Build AI telemetry — usage, cost, engagement, ROI reporting | `main.py` + `sql/` + `output/dashboard.html` |
 | Dashboards leadership relies on | The HTML dashboard: summary cards, per-use-case and daily tables |
@@ -206,7 +205,6 @@ finance-ai-telemetry-roi-dashboard/
 
 ## Author note
 
-Built from scratch as a portfolio project for the SoFi Associate AI
-Engineer, Finance Transformation role. Original synthetic data, original
+Built from scratch as a portfolio project. Original synthetic data, original
 code, original SQL and original eval cases — nothing copied from any other
 project.
